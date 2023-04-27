@@ -102,6 +102,13 @@ public class Recipe {
 
     public void setNotes(Notes notes) {
         this.notes = notes;
+        notes.setRecipe(this);
+    }
+
+    public Recipe addIngredient(Ingredient ingredient){
+        ingredient.setRecipe(this);
+        this.getIngredients().add(ingredient);
+        return this ;
     }
 
     public Byte[] getImage() {
